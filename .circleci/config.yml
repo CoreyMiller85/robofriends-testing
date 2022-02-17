@@ -5,5 +5,4 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - store_test_results
       - run: echo "a first hello"
