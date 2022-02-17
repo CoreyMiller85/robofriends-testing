@@ -12,9 +12,16 @@ jobs:
     steps:
       - checkout
       - run: echo "Double Trouble"
+  steve:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "Double Trouble"
 workflows:
   version: 2.1
   bobby_sally:
     jobs:
       - bobby
       - sally
+      - steve
