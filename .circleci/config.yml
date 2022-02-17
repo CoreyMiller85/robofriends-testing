@@ -15,16 +15,18 @@ jobs:
       - checkout
       - run: echo "testing stuff"
       - run: npm test
-  steve:
+  hithere:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/node
     steps:
       - checkout
-      - run: echo "Double Trouble"
+      - run: echo "helllo"
 workflows:
   version: 2.1
-  bobby_sally:
+  build_test_and_lint:
     jobs:
-      - bobby
-      - sally
-      - steve
+      - build
+      - hithere
+      - test:
+          requires:
+            - hithere
