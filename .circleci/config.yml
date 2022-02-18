@@ -7,6 +7,7 @@ jobs:
       - checkout
       - run: echo "npm installing"
       - run: npm install
+      - run: npm test
       - run: CI=true npm run build
   test:
     docker:
@@ -14,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run: echo "testing stuff"
-      - run: npm test
+
   hithere:
     docker:
       - image: circleci/node:16.13.1-bullseye-browsers-legacy
